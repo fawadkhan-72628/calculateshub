@@ -1,0 +1,72 @@
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+  RewriteRule ^index\.html$ / [R=301,L]
+
+  RewriteCond %{THE_REQUEST} \s/+calculators\.html[\s?] [NC]
+  RewriteRule ^calculators\.html$ /tools [R=301,L]
+
+  RewriteCond %{THE_REQUEST} \s/+calculator\.html[\s?] [NC]
+  RewriteRule ^calculator\.html$ /calculator [R=301,L]
+
+  RewriteCond %{THE_REQUEST} \s/+about\.html[\s?] [NC]
+  RewriteRule ^about\.html$ /about [R=301,L]
+
+  RewriteCond %{THE_REQUEST} \s/+contact\.html[\s?] [NC]
+  RewriteRule ^contact\.html$ /contact [R=301,L]
+
+  RewriteCond %{THE_REQUEST} \s/+faq\.html[\s?] [NC]
+  RewriteRule ^faq\.html$ /faq [R=301,L]
+
+  RewriteCond %{THE_REQUEST} \s/+privacy\.html[\s?] [NC]
+  RewriteRule ^privacy\.html$ /privacy [R=301,L]
+
+  RewriteCond %{THE_REQUEST} \s/+terms\.html[\s?] [NC]
+  RewriteRule ^terms\.html$ /terms [R=301,L]
+
+  RewriteCond %{THE_REQUEST} \s/+disclaimer\.html[\s?] [NC]
+  RewriteRule ^disclaimer\.html$ /disclaimer [R=301,L]
+
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  RewriteRule ^$ index.html [L]
+
+  RewriteRule ^tools/?$ calculators.html [L]
+  RewriteRule ^calculator/?$ calculator.html [L]
+
+  RewriteRule ^about/?$ about.html [L]
+  RewriteRule ^contact/?$ contact.html [L]
+  RewriteRule ^faq/?$ faq.html [L]
+  RewriteRule ^privacy/?$ privacy.html [L]
+  RewriteRule ^terms/?$ terms.html [L]
+  RewriteRule ^disclaimer/?$ disclaimer.html [L]
+
+  RewriteRule ^tools/([^/]+)/?$ tools/index.html [L,QSA]
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/plain text/css text/javascript application/javascript application/x-javascript application/json application/xml image/svg+xml
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  ExpiresByType text/css "access plus 30 days"
+  ExpiresByType application/javascript "access plus 30 days"
+  ExpiresByType text/javascript "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType image/png "access plus 180 days"
+  ExpiresByType image/jpeg "access plus 180 days"
+  ExpiresByType image/webp "access plus 180 days"
+  ExpiresByType image/x-icon "access plus 365 days"
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

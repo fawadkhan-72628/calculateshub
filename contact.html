@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Contact</title>
+    <meta name="description" content="Contact us for feedback and calculator requests." />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="common.js" defer></script>
+    <script src="contact-page.js" defer></script>
+  </head>
+  <body>
+    <div id="site-header"></div>
+
+    <main id="main" class="container page">
+      <div class="two-col">
+        <section class="panel">
+          <h1 style="margin:0 0 8px;font-size:22px;letter-spacing:-0.02em">Contact</h1>
+          <p class="muted" style="margin:0 0 14px">Send feedback, report an issue, or request a new calculator.</p>
+          <form id="contact-form" class="form">
+            <div class="field">
+              <div class="label-row"><label for="c-name">Name</label></div>
+              <input id="c-name" class="input" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <div class="label-row"><label for="c-email">Email</label></div>
+              <input id="c-email" class="input" type="email" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <div class="label-row"><label for="c-message">Message</label></div>
+              <textarea id="c-message" class="input" rows="6" required></textarea>
+            </div>
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              <button class="button primary" type="submit">Generate email</button>
+              <button id="contact-copy" class="button" type="button">Copy message</button>
+            </div>
+            <div class="hint">This form opens your email client. No data is sent from this page.</div>
+          </form>
+        </section>
+        <section class="panel">
+          <h2 style="margin:0 0 10px;font-size:16px">Common topics</h2>
+          <div class="grid" style="grid-template-columns:1fr">
+            <div class="card">
+              <h3>Calculator request</h3>
+              <p>Tell us the calculator name, inputs, and expected outputs.</p>
+            </div>
+            <div class="card">
+              <h3>Bug report</h3>
+              <p>Include the calculator name and steps to reproduce.</p>
+            </div>
+            <div class="card">
+              <h3>Widget embed help</h3>
+              <p>Share a screenshot and the calculator name you were using.</p>
+            </div>
+          </div>
+          <div style="height:14px"></div>
+          <a class="button" href="/faq">Read FAQ</a>
+        </section>
+      </div>
+    </main>
+
+    <div id="site-footer"></div>
+  </body>
+</html>

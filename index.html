@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>calculateshub</title>
+    <meta name="description" content="Fast, mobile-friendly tools across finance, business, math, conversions, and more." />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="calculators.js" defer></script>
+    <script src="common.js" defer></script>
+    <script src="home.js" defer></script>
+  </head>
+  <body>
+    <div id="site-header"></div>
+
+    <main id="main" class="page">
+      <section class="home-hero">
+        <div class="container">
+          <div class="home-hero-grid">
+            <div class="home-hero-copy">
+              <div class="directory-search">
+                <div class="search">
+                  <span class="search-icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <path d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z" stroke="currentColor" stroke-width="2" />
+                      <path d="M16.8 16.8 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                  </span>
+                  <input id="home-search" class="input search-input" placeholder="Search calculators..." autocomplete="off" />
+                </div>
+                <button id="home-search-go" class="button primary" type="button">Search</button>
+                <span class="hint">Try: mortgage, CTR, BMI</span>
+              </div>
+            </div>
+
+            <div class="home-hero-visual">
+              <div class="home-hero-image" aria-hidden="true">
+                <svg viewBox="0 0 520 340" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                  <defs>
+                    <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#1d5bff"/>
+                      <stop offset="100%" stop-color="#38bdf8"/>
+                    </linearGradient>
+                    <linearGradient id="grad2" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0%" stop-color="#0b2f6f"/>
+                      <stop offset="100%" stop-color="#1d5bff"/>
+                    </linearGradient>
+                  </defs>
+                  <rect x="0" y="0" width="520" height="340" rx="18" fill="#ffffff"/>
+                  <circle cx="110" cy="90" r="70" fill="url(#grad1)" opacity="0.28"/>
+                  <circle cx="410" cy="60" r="46" fill="#14b8a6" opacity="0.18"/>
+                  <circle cx="430" cy="260" r="80" fill="#f59e0b" opacity="0.18"/>
+                  <rect x="40" y="210" width="440" height="90" rx="14" fill="url(#grad2)" opacity="0.16"/>
+                  <rect x="56" y="70" width="210" height="140" rx="14" fill="#eef4ff" stroke="#dfe7ff"/>
+                  <rect x="284" y="110" width="180" height="106" rx="14" fill="#f7fbff" stroke="#eaf2ff"/>
+                  <g>
+                    <rect x="76" y="92" width="52" height="12" rx="6" fill="#1d5bff" opacity="0.8"/>
+                    <rect x="76" y="114" width="132" height="10" rx="5" fill="#c7d7ff"/>
+                    <rect x="76" y="132" width="132" height="10" rx="5" fill="#c7d7ff"/>
+                    <rect x="76" y="150" width="92" height="10" rx="5" fill="#c7d7ff"/>
+                  </g>
+                  <g>
+                    <rect x="304" y="132" width="70" height="12" rx="6" fill="#1d5bff" opacity="0.8"/>
+                    <rect x="304" y="154" width="130" height="10" rx="5" fill="#dbe6ff"/>
+                    <rect x="304" y="172" width="100" height="10" rx="5" fill="#dbe6ff"/>
+                  </g>
+                </svg>
+              </div>
+              <div class="home-visual-shell">
+                <div class="home-visual-top">
+                  <div class="home-visual-badge">
+                    <span class="home-visual-dot" aria-hidden="true"></span>
+                    <span>Quick pick</span>
+                  </div>
+                </div>
+                <div id="quick-pick" class="grid" style="grid-template-columns:1fr;gap:10px"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="home-showcase">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <h2>Featured</h2>
+              <p>Attractive visuals with popular tools.</p>
+            </div>
+            <a class="button" href="#" data-route="tools">Explore tools</a>
+          </div>
+          <div class="showcase-grid">
+            <a class="showcase-card" href="#" data-cat="financial">
+              <div class="showcase-image">
+                <svg viewBox="0 0 320 160" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                  <rect x="0" y="0" width="320" height="160" rx="16" fill="#ffffff"/>
+                  <rect x="16" y="20" width="288" height="120" rx="14" fill="#eef4ff" stroke="#e1eaff"/>
+                  <rect x="36" y="46" width="44" height="12" rx="6" fill="#1d5bff" opacity="0.9"/>
+                  <rect x="36" y="66" width="120" height="10" rx="5" fill="#c7d7ff"/>
+                  <rect x="36" y="84" width="98" height="10" rx="5" fill="#c7d7ff"/>
+                </svg>
+              </div>
+              <div class="showcase-text">
+                <strong>Financial</strong>
+                <span class="muted">Loans, interest, budgets</span>
+              </div>
+            </a>
+            <a class="showcase-card" href="#" data-cat="e-commerce">
+              <div class="showcase-image">
+                <svg viewBox="0 0 320 160" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                  <rect x="0" y="0" width="320" height="160" rx="16" fill="#ffffff"/>
+                  <rect x="16" y="20" width="288" height="120" rx="14" fill="#fff7ed" stroke="#fde68a"/>
+                  <circle cx="80" cy="74" r="22" fill="#f59e0b" opacity="0.7"/>
+                  <rect x="116" y="62" width="132" height="16" rx="8" fill="#fcd34d"/>
+                </svg>
+              </div>
+              <div class="showcase-text">
+                <strong>E-commerce</strong>
+                <span class="muted">AOV, ROAS, CAC</span>
+              </div>
+            </a>
+            <a class="showcase-card" href="#" data-cat="business">
+              <div class="showcase-image">
+                <svg viewBox="0 0 320 160" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                  <rect x="0" y="0" width="320" height="160" rx="16" fill="#ffffff"/>
+                  <rect x="16" y="20" width="288" height="120" rx="14" fill="#f0fdfa" stroke="#99f6e4"/>
+                  <rect x="44" y="54" width="16" height="60" rx="8" fill="#14b8a6"/>
+                  <rect x="92" y="44" width="16" height="70" rx="8" fill="#0ea5e9"/>
+                  <rect x="140" y="64" width="16" height="50" rx="8" fill="#1d5bff"/>
+                  <rect x="188" y="34" width="16" height="80" rx="8" fill="#6366f1"/>
+                  <rect x="236" y="48" width="16" height="66" rx="8" fill="#f59e0b"/>
+                </svg>
+              </div>
+              <div class="showcase-text">
+                <strong>Business</strong>
+                <span class="muted">Profit, pricing, tax</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="home-categories">
+        <div class="container">
+          <div class="home-categories-grid">
+            <a class="home-tile tile-financial" href="#" data-cat="financial">
+              <span class="home-tile-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 19V5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M4 19H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M8 15V11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M12 15V8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M16 15V10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <div class="home-tile-text">
+                <strong>Financial</strong>
+                <span class="muted">Loans, interest, budgets</span>
+              </div>
+            </a>
+
+            <a class="home-tile tile-business" href="#" data-cat="business">
+              <span class="home-tile-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 20V8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M8 20V4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M12 20V10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M16 20V6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M20 20V12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <div class="home-tile-text">
+                <strong>Business</strong>
+                <span class="muted">Profit, pricing, tax</span>
+              </div>
+            </a>
+
+            <a class="home-tile tile-ecom" href="#" data-cat="e-commerce">
+              <span class="home-tile-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 7H20L19 12H7L6 7Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                  <path d="M7 12L6 7L4 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M9 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" fill="currentColor"/>
+                  <path d="M17 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" fill="currentColor"/>
+                  <path d="M7 16H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <div class="home-tile-text">
+                <strong>E-commerce</strong>
+                <span class="muted">AOV, ROAS, CAC</span>
+              </div>
+            </a>
+
+            <a class="home-tile tile-math" href="#" data-cat="math">
+              <span class="home-tile-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 8h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M7 12h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M7 16h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M5 4h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </span>
+              <div class="home-tile-text">
+                <strong>Math</strong>
+                <span class="muted">Percentages, ratios</span>
+              </div>
+            </a>
+
+            <a class="home-tile tile-conv" href="#" data-cat="conversions">
+              <span class="home-tile-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 7h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M7 7l2-2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M7 7l2 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M17 17H7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M17 17l-2-2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M17 17l-2 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <div class="home-tile-text">
+                <strong>Conversions</strong>
+                <span class="muted">Units and rates</span>
+              </div>
+            </a>
+
+            <a class="home-tile tile-misc" href="#" data-cat="miscellaneous">
+              <span class="home-tile-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 3l3 6 6 3-6 3-3 6-3-6-6-3 6-3 3-6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <div class="home-tile-text">
+                <strong>More tools</strong>
+                <span class="muted">Everyday helpers</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <div class="container">
+        <div id="ad-home-top" class="ad-slot"></div>
+      </div>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <h2>Popular calculators</h2>
+              <p>Most used tools this week.</p>
+            </div>
+            <a class="button" href="#" data-route="tools">View all</a>
+          </div>
+          <div id="popular-grid" class="grid"></div>
+        </div>
+      </section>
+
+      <section class="home-banner">
+        <div class="container">
+          <div class="banner-card">
+            <div class="banner-left">
+              <div class="banner-title">Fast, attractive calculators for real-world numbers</div>
+              <div class="banner-copy">Open a tool, enter values, and get instant results.</div>
+              <div class="banner-actions" style="display:flex;gap:10px;flex-wrap:wrap">
+                <a class="button primary" href="#" data-route="tools">Browse tools</a>
+                <a class="button" href="#" data-cat="e-commerce">E-commerce</a>
+              </div>
+            </div>
+            <div class="banner-art">
+              <svg viewBox="0 0 420 220" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                <defs>
+                  <linearGradient id="b1" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#1d5bff"/>
+                    <stop offset="100%" stop-color="#38bdf8"/>
+                  </linearGradient>
+                </defs>
+                <rect x="14" y="18" width="392" height="184" rx="16" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.35)"/>
+                <circle cx="110" cy="88" r="36" fill="url(#b1)" opacity="0.9"/>
+                <rect x="168" y="70" width="180" height="16" rx="8" fill="#cfe3ff"/>
+                <rect x="168" y="96" width="150" height="12" rx="6" fill="#e4efff"/>
+                <rect x="168" y="116" width="120" height="12" rx="6" fill="#e4efff"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <h2>Latest calculators</h2>
+              <p>New and recently added.</p>
+            </div>
+          </div>
+          <div id="latest-grid" class="grid"></div>
+        </div>
+      </section>
+
+      <section class="home-promo">
+        <div class="container">
+          <div class="promo-card">
+            <div class="promo-left">
+              <div class="promo-title">Numbers made simple</div>
+              <div class="promo-copy">Get instant results with clear outputs.</div>
+              <div class="promo-actions" style="display:flex;gap:10px;flex-wrap:wrap">
+                <a class="button primary" href="#" data-route="tools">Explore calculators</a>
+                <a class="button" href="#" data-cat="financial">Financial</a>
+              </div>
+            </div>
+            <div class="promo-art" aria-hidden="true">
+              <svg viewBox="0 0 460 220" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                <defs>
+                  <linearGradient id="p1" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#0ea5e9"/>
+                    <stop offset="100%" stop-color="#1d5bff"/>
+                  </linearGradient>
+                  <linearGradient id="p2" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#14b8a6"/>
+                    <stop offset="100%" stop-color="#38bdf8"/>
+                  </linearGradient>
+                </defs>
+                <rect x="16" y="18" width="428" height="184" rx="16" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.35)"/>
+                <circle cx="120" cy="88" r="42" fill="url(#p1)" opacity="0.9"/>
+                <rect x="188" y="72" width="190" height="16" rx="8" fill="#d7efff"/>
+                <rect x="188" y="98" width="160" height="12" rx="6" fill="#eaf6ff"/>
+                <rect x="188" y="118" width="126" height="12" rx="6" fill="#eaf6ff"/>
+                <g>
+                  <rect x="44" y="156" width="110" height="10" rx="5" fill="url(#p2)" opacity="0.7"/>
+                  <rect x="166" y="156" width="110" height="10" rx="5" fill="#cfe3ff"/>
+                  <rect x="288" y="156" width="110" height="10" rx="5" fill="#cfe3ff"/>
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+    <script>
+      (function(){
+        function isHttp(){
+          var p = String(location.protocol || "");
+          return p === "http:" || p === "https:";
+        }
+        function toolsHref(){
+          return isHttp() ? "/tools" : "calculators.html";
+        }
+        function catHref(slug){
+          var s = String(slug || "");
+          return isHttp() ? ("/tools#" + s) : ("calculators.html#" + s);
+        }
+        document.querySelectorAll('a[data-route="tools"]').forEach(function(a){ a.setAttribute('href', toolsHref()); });
+        document.querySelectorAll('a[data-cat]').forEach(function(a){ var s = a.getAttribute('data-cat'); a.setAttribute('href', catHref(s)); });
+      })();
+    </script>
+  </body>
+</html>

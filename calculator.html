@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Calculator</title>
+    <meta name="description" content="Online calculator with instant results." />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="calculators.js" defer></script>
+    <script src="common.js" defer></script>
+    <script src="calculator-content.js" defer></script>
+    <script src="calculator-page.js" defer></script>
+  </head>
+  <body>
+    <div id="site-header"></div>
+
+    <main id="main" class="container page">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="/tools">Tools</a>
+        <span aria-hidden="true">/</span>
+        <span id="crumb-current" class="muted">Calculator</span>
+      </nav>
+      <div style="height:12px"></div>
+
+      <div id="ad-calculator-top" class="ad-slot"></div>
+      <div style="height:12px"></div>
+
+      <div id="calculator-shell"></div>
+    </main>
+
+    <div id="site-footer"></div>
+  </body>
+</html>
